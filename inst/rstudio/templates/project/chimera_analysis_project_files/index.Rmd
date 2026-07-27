@@ -15,7 +15,7 @@ params:
    input: 
       label: "`input`: Path to repertoire file"
       input: file
-      value: "ExampleDb.tsv.gz"
+      value: "https://raw.githubusercontent.com/immcantation/enchantr/refs/heads/master/data-raw/ExampleDb.tsv.gz"
    outname:
       label: "`outname`"
       input: text

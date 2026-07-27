@@ -843,7 +843,7 @@ tbl <- eetable(
   file = "V_usage_bySequence"
 )
 cat(
-  "V family usage by sequence table can be found here: ",
+  "V gene usage by sequence table can be found here: ",
   "[V_usage_bySequence.tsv](tables/V_usage_bySequence.tsv)\n"
 )
 ```
@@ -881,7 +881,7 @@ htmltools::tagList(v_gene_by_clone_plots)
 
 tbl <- eetable(v_gene_usage_clone, caption="V_Usage_by_Clone_Table", outdir=params$outdir, file="V_usage_byClone")
 cat(
-  "V family usage by clone table can be found here: ",
+  "V gene usage by clone table can be found here: ",
   "[V_usage_byClone.tsv](tables/V_usage_byClone.tsv)\n"
 )
 ```

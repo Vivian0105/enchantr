@@ -54,6 +54,7 @@ Imports:
     iterators,
     knitr,
     lifecycle,
+    patchwork,
     plotly,
     RColorBrewer,
     R.utils,
