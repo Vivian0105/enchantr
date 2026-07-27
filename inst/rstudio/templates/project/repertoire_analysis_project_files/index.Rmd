@@ -731,7 +731,7 @@ if (nrow(db_locus) > 0) {
 
 # V gene usage
 <div class="introduction_paragraph">
-The V gene family and V gene usage in each of the sample is represented below. Function `countGenes` from package <a href="https://alakazam.readthedocs.io/en/stable/" target="_blank">Alakazam</a> is used to calculate the count and relative abundance of V genes or families within groups. V gene usage by sequence presents the distribution of V gene in each sequence in groups. V gene usage by clone presents the distribution of the most common V gene within each clone across groups.
+The V gene family and V gene usage in each of the sample is represented below. Function `countGenes` from package <a href="https://alakazam.readthedocs.io/en/stable/" target="_blank">Alakazam</a> is used to calculate the count and relative abundance of V genes or families within groups. V gene usage is represented by group, normalized by sequence or by clone.
 </div>
 
 ## V gene family usage by sequence
@@ -771,7 +771,7 @@ cat(
 ## V gene family usage by clone
 ```{r v-gene-family-by-clone, echo=F, fig.width=9, fig.height=4, fig.cap=caption, results='asis'}
 
-caption <- "V gene family usuage by clone"
+caption <- "V gene family usage by clone"
 family_clone <- countGenes(db, gene="v_call", groups=c("sample_id","subject_id","locus"), mode="family", clone='clone_id') %>%      
                        arrange(sample_id, subject_id, locus)
 
