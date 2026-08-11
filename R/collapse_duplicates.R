@@ -47,9 +47,9 @@ findDuplicates <- function (db,
                             num_fields = c("consensus_count", "duplicate_count"),
                             seq_fields = NULL,
                             add_count = TRUE,
-                            ignore = c("N", "-", ".", "?"), 
+                            ignore = c("N", "-", ".", "?"),
                             sep=",",
-                            dry = F, verbose = F,
+                            verbose = F,
                             nproc=1) {
     
     # Including c_call if present in the groups, so sequences with different c_call will not be collapsed
@@ -121,7 +121,7 @@ findDuplicates <- function (db,
             parallel::clusterExport(cluster,
                                     list('db_subset', 'id', 'seq', 'text_fields',
                                             'num_fields', 'seq_fields', 'add_count',
-                                            'ignore', 'sep', 'dry', 'verbose', 'columns'),
+                                            'ignore', 'sep', 'verbose', 'columns'),
                                     envir=environment() )
         }
         registerDoParallel(cluster)
@@ -152,7 +152,7 @@ findDuplicates <- function (db,
                                                 add_count = add_count,
                                                 ignore = ignore,
                                                 sep=sep,
-                                                dry = dry, verbose = verbose)
+                                                dry = FALSE, verbose = verbose)
             collapsed_db %>%
                 select(any_of(c(columns,'collapse_count', 'finddups_row_idx')))
         },
